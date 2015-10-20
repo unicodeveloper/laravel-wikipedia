@@ -9,11 +9,11 @@
 
 > Laravel Package to work with Wikipedia. Very easy to use. Offers the use of Facades and Dependency Injection
 
-## Install
+## Installation
 
 [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.3+, and [Composer](https://getcomposer.org) are required.
 
-Via Composer
+First, pull in the package through Composer.
 
 ``` bash
 $ composer require busayo/laravel-wikipedia
@@ -27,13 +27,9 @@ Another alternative is to simply add the following line to the require block of 
 
 Then run `composer install` or `composer update` to download it and have the autoloader updated.
 
-
-Add this to your providers array in `config/app.php`
+And then include these service providers within `config/app.php`
 
 ```php
-
-// Laravel 5: config/app.php
-
 'providers' => [
     ...
     'Busayo\Larapedia\WikiRandServiceProvider::class',
@@ -41,17 +37,20 @@ Add this to your providers array in `config/app.php`
 ];
 ```
 
-This package also comes with a facade
+This package also comes with a Facade
 
 ```php
-
-// Laravel 5: config/app.php
-
 'aliases' => [
     ...
     'WikiRand' => 'Busayo\Larapedia\WikiRandFacade::class',
     ...
 ]
+```
+
+Run the following command, it creates a `config/wikirand.php` in your laravel app. You can modify the configuration
+
+```php
+    php artisan vendor:publish
 ```
 
 ## Usage

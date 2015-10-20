@@ -14,6 +14,19 @@ class WikiRandServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
+     *  Publishes all the assets this package needs to function and load all routes
+     * @return [type] [description]
+     */
+    public function boot()
+    {
+        $config = realpath(__DIR__.'/../resources/config/wikirand.php');
+
+        $this->publishes([
+            $config => config_path('wikirand.php')
+        ]);
+    }
+
+    /**
      * Register the application services
      * @return void
      */
