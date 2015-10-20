@@ -53,22 +53,24 @@ class WikiRand
      * @param integer $number
      * @param string  $engine
      */
-    public function __construct($language, $number = 1, $engine = 'pedia')
+    public function __construct( $settings = [])
     {
-        $this->setLanguage($language);
-        $this->setEngine($engine);
+        $number = 1;
+        $this->setLanguage( $settings['language'] );
+        $this->setEngine( $settings['engine'] );
+
         if ($number > 0) {
-            $this->getNewRandomArticle($number);
+            $this->getNewRandomArticle( $number );
         }
     }
 
     /**
-     * [get_list_or_item description]
-     * @param  [type] $data    [description]
-     * @param  [type] $field   [description]
-     * @param  [type] $i       [description]
-     * @param  string $default [description]
-     * @return [type]          [description]
+     *  Get list of articles or items
+     * @param  array $data
+     * @param  string $field
+     * @param  integer $i
+     * @param  string $default
+     * @return mixed
      */
     private function get_list_or_item($data, $field, $i = null, $default = '')
     {

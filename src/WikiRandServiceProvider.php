@@ -20,7 +20,7 @@ class WikiRandServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('wikirand', function(){
-            return new WikiRand;
+            return new WikiRand(config('wikirand'));
         });
     }
 
