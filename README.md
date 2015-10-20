@@ -1,15 +1,17 @@
 # Laravel-Wikipedia
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
+[![Latest Stable Version](https://poser.pugx.org/busayo/laravel-wikipedia/v/stable.svg)](https://packagist.org/packages/busayo/laravel-wikipedia)
+![](https://img.shields.io/badge/unicodeveloper-approved-brightgreen.svg)
+[![License](https://poser.pugx.org/busayo/laravel-wikipedia/license.svg)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/busayo/laravel-wikipedia.svg)](https://travis-ci.org/busayo/laravel-wikipedia)
+[![Quality Score](https://img.shields.io/scrutinizer/g/busayo/laravel-wikipedia.svg?style=flat-square)](https://scrutinizer-ci.com/g/busayo/laravel-wikipedia)
+[![Total Downloads](https://img.shields.io/packagist/dt/busayo/laravel-wikipedia.svg?style=flat-square)](https://packagist.org/packages/busayo/laravel-wikipedia)
 
-Laravel Package to work with Wikipedia. Very easy to use. Offers the use of Facades and Dependency Injection
+> Laravel Package to work with Wikipedia. Very easy to use. Offers the use of Facades and Dependency Injection
 
 ## Install
+
+[PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.3+, and [Composer](https://getcomposer.org) are required.
 
 Via Composer
 
@@ -17,10 +19,129 @@ Via Composer
 $ composer require busayo/laravel-wikipedia
 ```
 
+Another alternative is to simply add the following line to the require block of your `composer.json` file.
+
+```
+"busayo/laravel-wikipedia": "1.0.*"
+```
+
+Then run `composer install` or `composer update` to download it and have the autoloader updated.
+
+
+Add this to your providers array in `config/app.php`
+
+```php
+
+// Laravel 5: config/app.php
+
+'providers' => [
+    ...
+    'Busayo\Larapedia\WikiRandServiceProvider::class',
+    ...
+];
+```
+
+This package also comes with a facade
+
+```php
+
+// Laravel 5: config/app.php
+
+'aliases' => [
+    ...
+    'WikiRand' => 'Busayo\Larapedia\WikiRandFacade::class',
+    ...
+]
+```
+
 ## Usage
 
+Use it like so:
+
+For those that love Facades immensely, I have provided the cake for you :smile: like so:
+
 ``` php
- Empty for Now...Work in Progress
+
+{{ WikiRand::getFirstSentence() }}  // returns 5321 Jagras è un asteroide della fascia principale.
+
+{{ WikiRand::getApiLanguage() }} // returns it
+
+{{ WikiRand::getId() }} // returns 812464
+
+{{ WikiRand::getTitle() }} // returns 5321 Jagras
+
+{{ WikiRand::getLink() }} // returns http://it.wikipedia.org/wiki/5321_Jagras
+
+{{ WikiRand::getNChar(25) }} // 5321 Jagras è un asteroide...
+
+{{ WikiRand::getCategoriesRelated() }}
+
+// returns
+array(3) {
+      [0]=> string(42) "Asteroidi della fascia principale centrale"
+      [1]=> string(31) "Corpi celesti scoperti nel 1985"
+      [2]=> string(16) "Stub - asteroidi"
+}
+
+{{ WikiRand::getOtherLangLinks() }}
+
+// returns
+array(10)
+      { [0]=> array(3)
+        { ["lang"]=> string(2) "en"
+          ["url"]=> string(40) "http://en.wikipedia.org/wiki/5321_Jagras"
+          ["*"]=> string(11) "5321 Jagras" }
+        [1]=> array(3) {
+          ["lang"]=> string(2) "eo"
+          ["url"]=> string(41) "http://eo.wikipedia.org/wiki/5321_Jagraso"
+          ["*"]=> string(12) "5321 Jagraso" }
+        [2]=> array(3) {
+          ["lang"]=> string(2) "fa"
+          ["url"]=> string(84) "http://fa.wikipedia.org/wiki/%D8%B3%DB%8C%D8%A7%D8%B1%DA%A9_%DB%B5%DB%B3%DB%B2%DB%B1"               ["*"]=> string(19) "سیا" }
+        [3]=> array(3) {
+          ["lang"]=> string(2) "hu"
+          ["url"]=> string(40) "http://hu.wikipedia.org/wiki/5321_Jagras"
+          ["*"]=> string(11) "5321 Jagras" }
+        [4]=> array(3) {
+          ["lang"]=> string(2) "hy"
+          ["url"]=> string(72) "http://hy.wikipedia.org/wiki/(5321)_%D5%8B%D5%A1%D5%A3%D6%80%D5%A1%D5%BD"
+          ["*"]=> string(19) "(5321) Ջագրաս" }
+        [5]=> array(3) {
+          ["lang"]=> string(2) "la"
+          ["url"]=> string(40) "http://la.wikipedia.org/wiki/5321_Jagras"
+          ["*"]=> string(11) "5321 Jagras" }
+        [6]=> array(3) {
+          ["lang"]=> string(2) "oc"
+          ["url"]=> string(40) "http://oc.wikipedia.org/wiki/5321_Jagras"
+          ["*"]=> string(11) "5321 Jagras" }
+        [7]=> array(3) {
+          ["lang"]=> string(2) "pl"
+          ["url"]=> string(42) "http://pl.wikipedia.org/wiki/(5321)_Jagras"
+          ["*"]=> string(13) "(5321) Jagras" }
+        [8]=> array(3) {
+          ["lang"]=> string(2) "pt"
+          ["url"]=> string(40) "http://pt.wikipedia.org/wiki/5321_Jagras"
+          ["*"]=> string(11) "5321 Jagras" }
+        [9]=> array(3) {
+          ["lang"]=> string(2) "uk"
+          ["url"]=> string(64) "http://uk.wikipedia.org/wiki/5321_%D0%AF%D2%91%D1%80%D0%B0%D1%81"
+          ["*"]=> string(15) "5321 Яґрас"
+        }
+}
+
+{{ WikiRand::getPlainTextArticle() }}
+
+// returns
+5321 Jagras è un asteroide della fascia principale. Scoperto nel 1985, presenta un'orbita caratterizzata da un semiasse maggiore pari a 2,5810209 UA e da un'eccentricità di 0,2213576, inclinata di 13,58746° rispetto all'eclittica. Collegamenti esterni (EN) Jagras - Dati riportati nel database dell'IAU Minor Planet Center (EN) Jagras - Dati riportati nel Jet Propulsion Laboratory - Small-Body Database
+
+{{ WikiRand::getArticleImages() }}
+
+// returns
+array(2) {
+      [0]=> string(63) "http://upload.wikimedia.org/wikipedia/commons/8/83/Celestia.png"
+      [1]=> string(76) "http://upload.wikimedia.org/wikipedia/commons/9/9a/Galileo_Gaspra_Mosaic.jpg"
+}
+
 ```
 
 ## Change log
@@ -29,17 +150,25 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Testing
 
-``` bash
-$ composer test
+You can run the tests with:
+
+```bash
+vendor/bin/phpunit run
 ```
+
+Alternatively, you can run the tests like so:
+
+```bash
+composer test
+```
+
+## Inspiration
+
+ * [WikiRandom](https://github.com/ihoru/WikiRandom)
 
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security
-
-If you discover any security related issues, please email [prosperotemuyiwa@gmail.com](prosperotemuyiwa@gmail.com) instead of using the issue tracker.
 
 ## Credits
 
@@ -49,17 +178,6 @@ If you discover any security related issues, please email [prosperotemuyiwa@gmai
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/league/:package_name.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/thephpleague/:package_name/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/thephpleague/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/thephpleague/:package_name.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/league/:package_name.svg?style=flat-square
+## Security
 
-[link-packagist]: https://packagist.org/packages/league/:package_name
-[link-travis]: https://travis-ci.org/thephpleague/:package_name
-[link-scrutinizer]: https://scrutinizer-ci.com/g/thephpleague/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/thephpleague/:package_name
-[link-downloads]: https://packagist.org/packages/league/:package_name
-[link-author]: https://github.com/:author_username
-[link-contributors]: ../../contributors
+If you discover any security related issues, please email [prosperotemuyiwa@gmail.com](prosperotemuyiwa@gmail.com) instead of using the issue tracker.
