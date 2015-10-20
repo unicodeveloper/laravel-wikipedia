@@ -75,7 +75,6 @@ For those that love Facades immensely, I have provided the cake for you :smile: 
 {{ WikiRand::getNChar(25) }} // 5321 Jagras è un asteroide...
 
 {{ WikiRand::getCategoriesRelated() }}
-
 // returns
 array(3) {
       [0]=> string(42) "Asteroidi della fascia principale centrale"
@@ -84,7 +83,6 @@ array(3) {
 }
 
 {{ WikiRand::getOtherLangLinks() }}
-
 // returns
 array(10)
       { [0]=> array(3)
@@ -130,12 +128,10 @@ array(10)
 }
 
 {{ WikiRand::getPlainTextArticle() }}
-
 // returns
 5321 Jagras è un asteroide della fascia principale. Scoperto nel 1985, presenta un'orbita caratterizzata da un semiasse maggiore pari a 2,5810209 UA e da un'eccentricità di 0,2213576, inclinata di 13,58746° rispetto all'eclittica. Collegamenti esterni (EN) Jagras - Dati riportati nel database dell'IAU Minor Planet Center (EN) Jagras - Dati riportati nel Jet Propulsion Laboratory - Small-Body Database
 
 {{ WikiRand::getArticleImages() }}
-
 // returns
 array(2) {
       [0]=> string(63) "http://upload.wikimedia.org/wikipedia/commons/8/83/Celestia.png"
