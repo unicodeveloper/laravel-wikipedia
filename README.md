@@ -22,7 +22,7 @@ $ composer require unicodeveloper/laravel-wikipedia
 Another alternative is to simply add the following line to the require block of your `composer.json` file.
 
 ```
-"unicodeveloper/laravel-wikipedia": "1.1.*"
+"unicodeveloper/laravel-wikipedia": "1.0.*"
 ```
 
 Then run `composer install` or `composer update` to download it and have the autoloader updated.
