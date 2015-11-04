@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Laravel-Wikipedia Test Suite">
+        <testsuite name="laravel-wikipedia Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

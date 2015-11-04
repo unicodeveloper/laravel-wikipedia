@@ -1,6 +1,6 @@
 <?php
 
-namespace Busayo\Larapedia;
+namespace Unicodeveloper\Larapedia;
 
 use Illuminate\Support\ServiceProvider;
 

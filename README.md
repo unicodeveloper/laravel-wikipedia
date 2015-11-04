@@ -1,11 +1,11 @@
-# Laravel-Wikipedia
+# laravel-wikipedia
 
-[![Latest Stable Version](https://poser.pugx.org/busayo/laravel-wikipedia/v/stable.svg)](https://packagist.org/packages/busayo/laravel-wikipedia)
+[![Latest Stable Version](https://poser.pugx.org/unicodeveloper/laravel-wikipedia/v/stable.svg)](https://packagist.org/packages/unicodeveloper/laravel-wikipedia)
 ![](https://img.shields.io/badge/unicodeveloper-approved-brightgreen.svg)
-[![License](https://poser.pugx.org/busayo/laravel-wikipedia/license.svg)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/busayo/laravel-wikipedia.svg)](https://travis-ci.org/busayo/laravel-wikipedia)
-[![Quality Score](https://img.shields.io/scrutinizer/g/busayo/laravel-wikipedia.svg?style=flat-square)](https://scrutinizer-ci.com/g/busayo/laravel-wikipedia)
-[![Total Downloads](https://img.shields.io/packagist/dt/busayo/laravel-wikipedia.svg?style=flat-square)](https://packagist.org/packages/busayo/laravel-wikipedia)
+[![License](https://poser.pugx.org/unicodeveloper/laravel-wikipedia/license.svg)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/unicodeveloper/laravel-wikipedia.svg)](https://travis-ci.org/unicodeveloper/laravel-wikipedia)
+[![Quality Score](https://img.shields.io/scrutinizer/g/unicodeveloper/laravel-wikipedia.svg?style=flat-square)](https://scrutinizer-ci.com/g/unicodeveloper/laravel-wikipedia)
+[![Total Downloads](https://img.shields.io/packagist/dt/unicodeveloper/laravel-wikipedia.svg?style=flat-square)](https://packagist.org/packages/unicodeveloper/laravel-wikipedia)
 
 > Laravel Package to work with Wikipedia. Very easy to use. Offers the use of Facades and Dependency Injection
 
@@ -16,13 +16,13 @@
 First, pull in the package through Composer.
 
 ``` bash
-$ composer require busayo/laravel-wikipedia
+$ composer require unicodeveloper/laravel-wikipedia
 ```
 
 Another alternative is to simply add the following line to the require block of your `composer.json` file.
 
 ```
-"busayo/laravel-wikipedia": "1.0.*"
+"unicodeveloper/laravel-wikipedia": "1.1.*"
 ```
 
 Then run `composer install` or `composer update` to download it and have the autoloader updated.
@@ -32,7 +32,7 @@ And then include these service providers within `config/app.php`
 ```php
 'providers' => [
     ...
-    'Busayo\Larapedia\WikiRandServiceProvider::class',
+    Unicodeveloper\Larapedia\WikiRandServiceProvider::class,
     ...
 ];
 ```
@@ -42,7 +42,7 @@ This package also comes with a Facade
 ```php
 'aliases' => [
     ...
-    'WikiRand' => 'Busayo\Larapedia\WikiRandFacade::class',
+    'WikiRand' => Unicodeveloper\Larapedia\WikiRandFacade::class,
     ...
 ]
 ```

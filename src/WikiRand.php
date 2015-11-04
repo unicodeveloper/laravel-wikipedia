@@ -1,10 +1,10 @@
 <?php
 
-namespace Busayo\Larapedia;
+namespace Unicodeveloper\Larapedia;
 
-use Busayo\Larapedia\Exception\EmptyArticleException;
-use Busayo\Larapedia\Exception\EngineNotSupportedException;
-use Busayo\Larapedia\Exception\LanguageNotSupportedException;
+use Unicodeveloper\Larapedia\Exception\EmptyArticleException;
+use Unicodeveloper\Larapedia\Exception\EngineNotSupportedException;
+use Unicodeveloper\Larapedia\Exception\LanguageNotSupportedException;
 
 class WikiRand
 {

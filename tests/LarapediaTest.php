@@ -1,6 +1,6 @@
 <?php
 
-namespace Busayo\Larapedia\Test;
+namespace Unicodeveloper\Larapedia\Test;
 
 class LarapediaTest extends \PHPUnit_Framework_TestCase
 {
