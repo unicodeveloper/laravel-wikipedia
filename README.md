@@ -165,9 +165,14 @@ composer test
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Credits
+## How can I thank you?
 
-- [Prosper Otemuyiwa](https://twitter.com/unicodeveloper)
+Why not star the github repo? I'd love the attention! Why not share the link for this repository on Twitter or HackerNews? Spread the word!
+
+Don't forget to [follow me on twitter](https://twitter.com/unicodeveloper)!
+
+Thanks!
+Prosper Otemuyiwa.
 
 ## License
 
